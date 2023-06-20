@@ -1,0 +1,12 @@
+{
+    "Credentials": {
+        "AccessKeyId": "ASIA2HX5GQ772PMCZ2W7",
+        "SecretAccessKey": "DhVXKzYmypDyMQvBT+bqnzZfVmdKPmYjsDuA1mWf",
+        "SessionToken": "FwoGZXIvYXdzEF0aDP+3tqDRyQujUeFvzyKrAfbQqjPxXScjhG4BXcxAp9vuHVAPVulOzEfAUnlxHrysZq1/vuhbPHJl4Xj7r7sXLds0yYAXw490QPI/EqBuu6i9+GSHJSv/EV616vciEfwfPhN7fbnAmdfawfR7ZhgcD4qzVHpad+m3F5qYceP6/NAdkISKD7NTP9CPdrS3EiRr8Mq8EwNTbKXd8QaQeft4pBFCg4dpQcx63NoQGQZkhK8y/RTMmdyTRqwFvSiKksakBjItEzp4SDn/MusUye7pY5CAskWfHLQyXBkonTlWLuzdsoaAIuSMv/dAbS0aHPXl",
+        "Expiration": "2023-06-20T12:10:02+00:00"
+    },
+    "AssumedRoleUser": {
+        "AssumedRoleId": "AROA2HX5GQ77T3JNULC4S:Testing",
+        "Arn": "arn:aws:sts::703831902207:assumed-role/trusted_role/Testing"
+    }
+}

@@ -14,3 +14,9 @@ variable "github_username" {}
 variable "ct_home_region" {}
 
 variable "tf_backend_secondary_region" {}
+
+variable "concurrent_account_factory_actions" {}
+
+variable "maximum_concurrent_customizations" {}
+variable "assume_role_arn" {}
+variable "aws_profile" {}

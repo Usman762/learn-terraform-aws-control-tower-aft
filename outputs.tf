@@ -20,3 +20,7 @@ output "aft_management_account_id" {
 output "region" {
   value = var.ct_home_region
 }
+
+output "aft_management_account_request_repo_name" {
+  value = module.aft.account_request_repo_name
+}
