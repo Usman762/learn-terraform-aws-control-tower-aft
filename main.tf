@@ -42,6 +42,7 @@ resource "null_resource" "push_code" {
       git clone https://git-codecommit.${var.ct_home_region}.amazonaws.com/v1/repos/${module.aft.account_request_repo_name} ~/aft-account-request
       git checkout main
       rsync -r -a -p account-request/ ~/aft-account-request
+      cd ~/aft-account-request
       git add .
       git commit -m "Commit to a repo"
       git push origin main
