@@ -1,83 +1,55 @@
-module "sandbox" {
+module "network" {
   source = "./modules/aft-account-request"
 
   control_tower_parameters = {
-    AccountEmail              = "usman@copebit.ch"
-    AccountName               = "sandbox-aft"
-    ManagedOrganizationalUnit = "Demo"
-    SSOUserEmail              = "usman@copebit.ch"
-    SSOUserFirstName          = "Sandbox"
+    AccountEmail              = "uzair@copebit.ch"
+    AccountName               = "aft-uzair"
+    ManagedOrganizationalUnit = "Engineering"
+    SSOUserEmail              = "uzair@copebit.ch"
+    SSOUserFirstName          = "Uzair"
     SSOUserLastName           = "AFT"
   }
 
   account_tags = {
-    "Learn Tutorial" = "AFT"
+    "Copebit-Task" = "AFT-Learning"
   }
 
   change_management_parameters = {
-    change_requested_by = "HashiCorp Learn"
-    change_reason       = "Learn AWS Control Tower Account Factory for Terraform"
+    change_requested_by = "Copebit"
+    change_reason       = "Testing AFT Task"
   }
 
   custom_fields = {
     group = "non-prod"
   }
 
-  account_customizations_name = "sandbox"
+  account_customizations_name = "network"
 }
 
-module "second_account" {
+module "network_02" {
   source = "./modules/aft-account-request"
 
   control_tower_parameters = {
-    AccountEmail              = "usmanzahid@copebit.ch"
-    AccountName               = "second-aft"
-    ManagedOrganizationalUnit = "Demo"
-    SSOUserEmail              = "usmanzahid@copebit.ch"
-    SSOUserFirstName          = "Second"
+    AccountEmail              = "asghar@copebit.ch"
+    AccountName               = "aft-asghar"
+    ManagedOrganizationalUnit = "Engineering"
+    SSOUserEmail              = "asghar@copebit.ch"
+    SSOUserFirstName          = "asghar"
     SSOUserLastName           = "AFT"
   }
 
   account_tags = {
-    "Learn Tutorial" = "AFT-2nd"
+    "Copebit-Task" = "AFT-Task"
   }
 
   change_management_parameters = {
-    change_requested_by = "Usman Zahid"
-    change_reason       = "Provisiong second Account"
+    change_requested_by = "Copebit"
+    change_reason       = "Testing AFT"
   }
 
   custom_fields = {
-    group = "prod"
+    group = "non-prod"
   }
 
-  account_customizations_name = "sandbox-aft-account"
-}
-
-module "third_account" {
-  source = "./modules/aft-account-request"
-
-  control_tower_parameters = {
-    AccountEmail              = "usmanzahid-dev@copebit.ch"
-    AccountName               = "third-aft"
-    ManagedOrganizationalUnit = "Demo"
-    SSOUserEmail              = "usmanzahid-dev@copebit.ch"
-    SSOUserFirstName          = "Third"
-    SSOUserLastName           = "AFT"
-  }
-
-  account_tags = {
-    "Learn Tutorial" = "AFT-2nd"
-  }
-
-  change_management_parameters = {
-    change_requested_by = "Usman Zahid"
-    change_reason       = "Provisiong Third Account"
-  }
-
-  custom_fields = {
-    group = "prod"
-  }
-
-  account_customizations_name = "sandbox-aft-third-account"
+  account_customizations_name = "network"
 }

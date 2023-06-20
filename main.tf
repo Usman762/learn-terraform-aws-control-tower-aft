@@ -32,17 +32,18 @@ resource "null_resource" "push_code" {
   # Trigger the null_resource when the CodeCommit repository is created
   triggers = {
     repository_name = module.aft.account_request_repo_name
+    always_run = "${timestamp()}"
   }
 
   # Run a local-exec provisioner that executes a git command
   provisioner "local-exec" {
     command = <<EOF
       aws sts assume-role --role-arn ${var.assume_role_arn} --role-session-name Testing --profile ${var.aws_profile} --output json > test.json && export AWS_ACCESS_KEY_ID=`jq -r '.Credentials.AccessKeyId' test.json` && export AWS_SECRET_ACCESS_KEY=`jq -r '.Credentials.SecretAccessKey' test.json` && export AWS_SESSION_TOKEN=`jq -r '.Credentials.SessionToken' test.json` && aws sts get-caller-identity  
-      git clone https://git-codecommit.${var.ct_home_region}.amazonaws.com/v1/repos/${module.aft.account_request_repo_name}
+      git clone https://git-codecommit.${var.ct_home_region}.amazonaws.com/v1/repos/${module.aft.account_request_repo_name} ~/aft-account-request
       git checkout main
-      rsync -r -a -p ./account-request ./aft-account-request
+      rsync -r -a -p account-request/ ~/aft-account-request
       git add .
-      git commit -m "Initial commit"
+      git commit -m "Commit to a repo"
       git push origin main
     EOF
   }
